@@ -10,18 +10,23 @@ ____________  _____                             _   _               _
  */
 
 const Pool = require('pg').Pool;
+const connectionString = "postgresql://postgres:YdZYSm8AGVbLDZX5s620@containers-us-west-85.railway.app:7665/railway"
 
 /**
  * @notes Your Postgres credentials go here!
  */
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'vain',
+//     password: 'student',
+//     dialect: 'postgres',
+//     port: 5432
+// }); //Pool for local
+
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'vain',
-    password: 'student',
-    dialect: 'postgres',
-    port: 5432
-});
+	connectionString,
+})
 
 /**
  * @notes Testing the pool, will fail if not connected properly.
